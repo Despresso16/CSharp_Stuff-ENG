@@ -1,54 +1,36 @@
-﻿using System.Net.Http.Headers;
-
-namespace CsharpApp2
+﻿namespace ConsoleApp6
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //int[] numTab = new int[3] { 5, 2, 6 };
-            //string[] strTab = new string[] { "ZS", "Kocjan" };
-            //for (int i = 0; i < numTab.Length; i++)
-            //{
-            //    Console.WriteLine(numTab[i]);
+            int a = 9; int b = 10;
+            double c = 12.5, d = 18.93;
+            float e = 2.56f, f = 1.0f, g = 2.78f;
+            int resultInt = 0;
+            double resultDouble = 0;
+            float resultFloat = 0.0f;
 
-            //}
-            //foreach (int j in numTab)
-            //{
-            //    Console.WriteLine("{0} ", j);
-            //}
-            //foreach (string txt in strTab)
-            //{
-            //    Console.Write($"{txt} ");
-            //}
-            int[] nums = { 56, 2, 33, 47, 5 };
-            Console.WriteLine("Tablica nieposortowana: ");
-            foreach (int i in nums)
-            {
-                Console.Write($"{i} ");
 
-            }
-            
-            Array.Sort(nums);
-            Console.WriteLine("\nTablica posortowana");
-            foreach (int item in nums)
-            {
-                Console.Write(item + " ");
-            }
-            Array.Reverse(nums);
-            Console.WriteLine("\nTablica sort. odwrócona ");
-            foreach (int item1 in nums)
-            {
-                Console.Write(item1 + " ");
-            }
-            Console.WriteLine("\nMax element: " + nums.Max());
-            Console.WriteLine("Min elemnt: " + nums.Min());
+            resultInt = AddNumber(a, b);
+            resultDouble = AddNumber(c, d);
+            resultFloat = AddNumber(e, f, g);
+            Console.WriteLine("Wynik dodawania liczb calkowitych: " + resultInt);
+            Console.WriteLine("Wynik dodawania liczb rzeczywistych: " + resultDouble);
+            Console.WriteLine("Wynik dodawania float: " + resultFloat);
+        }
+        private static double AddNumber(double c, double d)
+        {
+            return c + d;
+        }
 
-            float sum = nums.Sum();
-            int count = nums.Count();
-            float avg = sum / count;
-            Console.WriteLine("Srednia tablicy: {0}", avg );
-            Console.WriteLine("Srednia z metody: " + nums.Average());
+        private static int AddNumber(int a, int b)
+        {
+            return a + b;
+        }
+        private static float AddNumber(float e, float f, float g)
+        {
+            return e + f + g;
         }
     }
 }

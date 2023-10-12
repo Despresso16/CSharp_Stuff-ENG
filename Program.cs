@@ -1,36 +1,57 @@
-﻿namespace ConsoleApp6
+﻿namespace ClassStuff
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int a = 9; int b = 10;
-            double c = 12.5, d = 18.93;
-            float e = 2.56f, f = 1.0f, g = 2.78f;
-            int resultInt = 0;
-            double resultDouble = 0;
-            float resultFloat = 0.0f;
+            Console.WriteLine("Linie ZKG KM!");
+            Autobus linia = new Autobus();
+            while (true)
+            {
+                Console.Write("Podaj linie: ");
+                linia.Linia = Console.ReadLine();
+                linia.ktoraLinia();
 
+            }
+           
+            
+            
 
-            resultInt = AddNumber(a, b);
-            resultDouble = AddNumber(c, d);
-            resultFloat = AddNumber(e, f, g);
-            Console.WriteLine("Wynik dodawania liczb calkowitych: " + resultInt);
-            Console.WriteLine("Wynik dodawania liczb rzeczywistych: " + resultDouble);
-            Console.WriteLine("Wynik dodawania float: " + resultFloat);
         }
-        private static double AddNumber(double c, double d)
+        class Autobus
         {
-            return c + d;
-        }
+            public string Linia;
+            public string Punkt1;
+            public string Punkt2;
+            public string[,] przyjazd = { { "", "", "" }, {"", "", "" } };
+            public void ktoraLinia() 
+            {
+                switch (this.Linia)
+                {
+                    case "472":
+                        this.Punkt1 = "Chechlo petla";
+                        this.Punkt2 = "Olkusz Dworzec PKP";
+                        przyjazd[] = { {"7.13", "7.52", "9.50"}, {"7.35", "8.20", "10.25" } };
+                        break;
+                    case "476":
+                        this.Punkt1 = "Rodaki petla";
+                        this.Punkt2 = "Olkusz Dworzec PKP";
+                        break;
+                    case "477":
+                        this.Punkt1 = "Rodaki petla";
+                        this.Punkt2 = "Olkusz Dworzec PKP";
+                        break;
+                    case "470":
+                        this.Punkt1 = "Cieslin dom ludowy";
+                        this.Punkt2 = "Olkusz E. Orzeszkowej";
+                        break;
+                    default:
+                        Console.WriteLine("Brak linii w danych sproboj ponownie:");
+                        break;
+                }
+            }
+            
 
-        private static int AddNumber(int a, int b)
-        {
-            return a + b;
-        }
-        private static float AddNumber(float e, float f, float g)
-        {
-            return e + f + g;
         }
     }
 }
